@@ -1,0 +1,21 @@
+{
+  "count": 15,
+  "files": [
+    "additions_and_removals_2026-09-23.tex",
+    "main_revised_05032026_norebutal.tex",
+    "main_revised_23092026_norebutal.tex",
+    "main_revised_23092026_tracked.tex",
+    "original_baseline_compile.tex",
+    "rebuttal_full_revision_2026-09-23.tex",
+    "references_tracked_2026-09-23.tex",
+    "reproduction_report_2026-09-23.tex",
+    "results/accuracy_table.tex",
+    "results/dense_table.tex",
+    "results/example2_verified_table.tex",
+    "results/example3_verified_table.tex",
+    "results/timing_table.tex",
+    "revision_notes_2026-09-23.tex",
+    "source_bundle_guide_2026-09-23.tex"
+  ],
+  "eight_document_masters_compile": true
+}

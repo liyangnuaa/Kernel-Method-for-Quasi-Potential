@@ -1,0 +1,20 @@
+{
+  "assets": 14,
+  "byte_identical": true,
+  "assets_checked": [
+    "figures/ablation.pdf",
+    "figures/comparison_2d.pdf",
+    "figures/native/convergence_study_example3.pdf",
+    "figures/native/Figure_4_residuals.pdf",
+    "figures/native/quasi_potential_slices_sparse.pdf",
+    "figures/native/Figure_1.pdf",
+    "figures/native/residuals_example3.pdf",
+    "figures/native/Figure_3.pdf",
+    "figures/native/Figure_2.pdf",
+    "results/example3_verified_table.tex",
+    "results/dense_table.tex",
+    "results/accuracy_table.tex",
+    "results/timing_table.tex",
+    "results/example2_verified_table.tex"
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "document": "clean",
+    "source": "main_revised_23092026_norebutal.tex",
+    "pdf": "build/main_revised_23092026_norebutal.pdf",
+    "pages": 32,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  },
+  {
+    "document": "marked",
+    "source": "main_revised_23092026_tracked.tex",
+    "pdf": "build/main_revised_23092026_tracked.pdf",
+    "pages": 48,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  },
+  {
+    "document": "rebuttal",
+    "source": "rebuttal_full_revision_2026-09-23.tex",
+    "pdf": "build/rebuttal_full_revision_2026-09-23.pdf",
+    "pages": 4,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  },
+  {
+    "document": "changes",
+    "source": "additions_and_removals_2026-09-23.tex",
+    "pdf": "build/additions_and_removals_2026-09-23.pdf",
+    "pages": 45,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  },
+  {
+    "document": "notes",
+    "source": "revision_notes_2026-09-23.tex",
+    "pdf": "build/revision_notes_2026-09-23.pdf",
+    "pages": 2,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  },
+  {
+    "document": "guide",
+    "source": "source_bundle_guide_2026-09-23.tex",
+    "pdf": "build/source_bundle_guide_2026-09-23.pdf",
+    "pages": 2,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  },
+  {
+    "document": "baseline",
+    "source": "original_baseline_compile.tex",
+    "pdf": "build/original_baseline_compile.pdf",
+    "pages": 28,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  },
+  {
+    "document": "reproduction",
+    "source": "reproduction_report_2026-09-23.tex",
+    "pdf": "build/reproduction_report_2026-09-23.pdf",
+    "pages": 4,
+    "status": "compiled without errors, missing references, or overfull boxes"
+  }
+]

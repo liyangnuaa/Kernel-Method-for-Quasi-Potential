@@ -1,0 +1,42 @@
+[
+  {
+    "file": "pdf/main_revised_23092026_norebutal.pdf",
+    "pages": 32,
+    "sha256": "0ff04a4ff7536999ab384e780c13b03b8298b16e8ddc287707f3e73d185d5d5f"
+  },
+  {
+    "file": "pdf/main_revised_23092026_tracked.pdf",
+    "pages": 48,
+    "sha256": "8f9dae253d06ca2e5f35b9ff1de11a61cf1211330f03edb3d702e400ff7549cd"
+  },
+  {
+    "file": "pdf/rebuttal_full_revision_2026-09-23.pdf",
+    "pages": 4,
+    "sha256": "40b93db7598e703cfb813e29171db6664e1ec599e5d64ea65e00b159299a6d0a"
+  },
+  {
+    "file": "pdf/additions_and_removals_2026-09-23.pdf",
+    "pages": 45,
+    "sha256": "6438c5bfc0646674ea39cb9aa7f18e14b51be1803b3886a7daa37a66a2fc3d89"
+  },
+  {
+    "file": "pdf/revision_notes_2026-09-23.pdf",
+    "pages": 2,
+    "sha256": "8208d7be9e884ae231fe1294b45afd40255026d3975dfc1e5e051862a777c375"
+  },
+  {
+    "file": "pdf/source_bundle_guide_2026-09-23.pdf",
+    "pages": 2,
+    "sha256": "d447fae62dd3908607d0bc6e546bd5cfd9f1d582cda2496d7c183e55c58ec46c"
+  },
+  {
+    "file": "pdf/original_baseline_compile.pdf",
+    "pages": 28,
+    "sha256": "2645801e31226d13f458a44315b3831ced94f397745dd2a699d22d328b30d9b9"
+  },
+  {
+    "file": "pdf/reproduction_report_2026-09-23.pdf",
+    "pages": 4,
+    "sha256": "1dfc24eb418918138d7808aac187e18ac5c7ac6ad609e6c3d6d4e5a390ebfe08"
+  }
+]

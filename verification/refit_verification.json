@@ -1,0 +1,7 @@
+{
+  "main_text_models_refitted": 11,
+  "npz_max_absolute_difference": 0.0,
+  "passed": true,
+  "gradient_checks": "passed within scripts",
+  "reference_values_used_for_training": false
+}
