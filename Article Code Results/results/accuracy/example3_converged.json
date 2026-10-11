@@ -1,0 +1,380 @@
+{
+  "protocol": "Recovered objective; analytic gradient; maxiter=5000, maxfun=100000, ftol=1e-13, gtol=1e-8, maxls=50, maxcor=30; output anchored by V(x)-V(0); seed=42; no reference-based tuning",
+  "records": [
+    {
+      "n": 50,
+      "seed": 42,
+      "weights": [
+        0.0,
+        0.0,
+        0.6957745486437678,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "anchor_before": 0.3265440948318723,
+      "anchor_after": 0.0,
+      "gradient_at_anchor": [
+        2.846069734980558e-07,
+        1.842937216416125e-06,
+        1.2624590010186e-06
+      ],
+      "hessian_error": 1.038821631137816e-06,
+      "raw_metrics": {
+        "rmse": 0.32654321982361634,
+        "max_abs": 0.3265511430122032,
+        "relative_l2": 0.0972549398219888,
+        "hj_mean_abs": 1.1619965833678424e-05,
+        "hj_max": 5.567332344469378e-05
+      },
+      "normalized_metrics": {
+        "rmse": 3.0131768791039584e-06,
+        "max_abs": 8.159761996751058e-06,
+        "relative_l2": 8.974197541402137e-07,
+        "hj_mean_abs": 1.1619965833678424e-05,
+        "hj_max": 5.567332344469378e-05
+      },
+      "independent_test_metrics": {
+        "rmse": 2.833878037629508e-06,
+        "max_abs": 7.684613800407192e-06,
+        "relative_l2": 9.37136231233194e-07,
+        "hj_mean_abs": 1.084449644765757e-05,
+        "hj_max": 5.441359609648089e-05
+      },
+      "optimizers": [
+        {
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "fun": 0.05209481177802585,
+          "nfev": 103,
+          "nit": 37,
+          "gradient_max": 0.06455928460556883,
+          "seconds": 0.019645208027213812
+        },
+        {
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "fun": 3.831376239143631e-06,
+          "nfev": 1609,
+          "nit": 1288,
+          "gradient_max": 0.0018198901166923587,
+          "seconds": 0.1297566249850206
+        }
+      ],
+      "gradient_checks": [
+        {
+          "value_abs_difference": 2.275957200481571e-15,
+          "directional_gradient_relative_error": 8.683895238725814e-07
+        },
+        {
+          "value_abs_difference": 4.85722573273506e-17,
+          "directional_gradient_relative_error": 8.265852868838408e-08
+        }
+      ],
+      "seconds": 0.30096308299107477
+    },
+    {
+      "n": 100,
+      "seed": 42,
+      "weights": [
+        0.0,
+        0.0,
+        0.7540480425960345,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "anchor_before": 0.4240401608821311,
+      "anchor_after": 0.0,
+      "gradient_at_anchor": [
+        4.881699136813429e-07,
+        -4.919202991894101e-07,
+        6.336625125866327e-07
+      ],
+      "hessian_error": 2.897314315962193e-06,
+      "raw_metrics": {
+        "rmse": 0.4240371521001101,
+        "max_abs": 0.42404118378294164,
+        "relative_l2": 0.12629172864792454,
+        "hj_mean_abs": 5.098815262897483e-06,
+        "hj_max": 3.606629684327345e-05
+      },
+      "normalized_metrics": {
+        "rmse": 3.7527063632064444e-06,
+        "max_abs": 1.2602199862321584e-05,
+        "relative_l2": 1.1176751173102808e-06,
+        "hj_mean_abs": 5.098815262897483e-06,
+        "hj_max": 3.606629684327345e-05
+      },
+      "independent_test_metrics": {
+        "rmse": 3.4163731513240313e-06,
+        "max_abs": 1.1680154423210354e-05,
+        "relative_l2": 1.1297617670929003e-06,
+        "hj_mean_abs": 4.680855040606184e-06,
+        "hj_max": 3.5312059701197995e-05
+      },
+      "optimizers": [
+        {
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "fun": 0.05133900369556283,
+          "nfev": 241,
+          "nit": 72,
+          "gradient_max": 0.09833974055903902,
+          "seconds": 0.15660541696706787
+        },
+        {
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "fun": 1.4857271940619213e-06,
+          "nfev": 1703,
+          "nit": 1384,
+          "gradient_max": 3.62626851611164,
+          "seconds": 0.25594095897395164
+        }
+      ],
+      "gradient_checks": [
+        {
+          "value_abs_difference": 9.020562075079397e-17,
+          "directional_gradient_relative_error": 6.70267281399628e-08
+        },
+        {
+          "value_abs_difference": 6.938893903907228e-18,
+          "directional_gradient_relative_error": 2.9031570203397195e-08
+        }
+      ],
+      "seconds": 0.7260283750365488
+    },
+    {
+      "n": 200,
+      "seed": 42,
+      "weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.833679664790219,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "anchor_before": -0.4340991023385476,
+      "anchor_after": 0.0,
+      "gradient_at_anchor": [
+        -0.00023122723784817144,
+        -2.2016688139481074e-05,
+        -4.41795159361982e-06
+      ],
+      "hessian_error": 6.1710693301454775e-06,
+      "raw_metrics": {
+        "rmse": 0.4340985346625942,
+        "max_abs": 0.43440547806696417,
+        "relative_l2": 0.12928832786125055,
+        "hj_mean_abs": 0.00021648200224559688,
+        "hj_max": 0.0018398137845139217
+      },
+      "normalized_metrics": {
+        "rmse": 0.0001768271384593516,
+        "max_abs": 0.00030637572841651917,
+        "relative_l2": 5.266473675076739e-05,
+        "hj_mean_abs": 0.00021648200224559688,
+        "hj_max": 0.0018398137845139217
+      },
+      "independent_test_metrics": {
+        "rmse": 0.00017592169773678732,
+        "max_abs": 0.00030700594533428216,
+        "relative_l2": 5.817561469480275e-05,
+        "hj_mean_abs": 0.00018887346362735826,
+        "hj_max": 0.0014451861144380018
+      },
+      "optimizers": [
+        {
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "fun": 0.0003643373090498989,
+          "nfev": 5207,
+          "nit": 4614,
+          "gradient_max": 0.7280492020766149,
+          "seconds": 12.892893666983582
+        },
+        {
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "fun": 0.0003642831965678917,
+          "nfev": 285,
+          "nit": 239,
+          "gradient_max": 0.0876752102120183,
+          "seconds": 0.12376745900837705
+        }
+      ],
+      "gradient_checks": [
+        {
+          "value_abs_difference": 0.0,
+          "directional_gradient_relative_error": 1.538550192109467e-08
+        },
+        {
+          "value_abs_difference": 4.065758146820642e-18,
+          "directional_gradient_relative_error": 1.1816025801678065e-05
+        }
+      ],
+      "seconds": 13.913854582991917
+    },
+    {
+      "n": 400,
+      "seed": 42,
+      "weights": [
+        0.0,
+        0.0,
+        0.8830419278944095,
+        0.0,
+        0.0,
+        0.11695799536019674,
+        0.0
+      ],
+      "anchor_before": -0.6409130660692905,
+      "anchor_after": 0.0,
+      "gradient_at_anchor": [
+        0.0035527918061314737,
+        0.001257987750506632,
+        0.007137638331190067
+      ],
+      "hessian_error": 0.0005006993572959594,
+      "raw_metrics": {
+        "rmse": 0.6417207113810659,
+        "max_abs": 0.6799158695427172,
+        "relative_l2": 0.19112480486228042,
+        "hj_mean_abs": 0.008343099035976308,
+        "hj_max": 0.09206765111296988
+      },
+      "normalized_metrics": {
+        "rmse": 0.005090165927493962,
+        "max_abs": 0.03900280347342644,
+        "relative_l2": 0.001516013044857471,
+        "hj_mean_abs": 0.008343099035976308,
+        "hj_max": 0.09206765111296988
+      },
+      "independent_test_metrics": {
+        "rmse": 0.004196842764318464,
+        "max_abs": 0.03704016377729946,
+        "relative_l2": 0.001387855567179456,
+        "hj_mean_abs": 0.0070182688442101265,
+        "hj_max": 0.055038604063703644
+      },
+      "optimizers": [
+        {
+          "success": false,
+          "status": 1,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "fun": 0.004234455868067715,
+          "nfev": 5315,
+          "nit": 5000,
+          "gradient_max": 7.453213764584131,
+          "seconds": 52.63322520797374
+        },
+        {
+          "success": false,
+          "status": 1,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "fun": 0.002668696806825796,
+          "nfev": 5369,
+          "nit": 5000,
+          "gradient_max": 2.637141656383802,
+          "seconds": 16.526552958006505
+        }
+      ],
+      "gradient_checks": [
+        {
+          "value_abs_difference": 0.0,
+          "directional_gradient_relative_error": 8.794903852936409e-09
+        },
+        {
+          "value_abs_difference": 9.89174020471495e-14,
+          "directional_gradient_relative_error": 4.912335438554144e-06
+        }
+      ],
+      "seconds": 72.5736195409554
+    },
+    {
+      "n": 800,
+      "seed": 42,
+      "weights": [
+        0.0,
+        0.0,
+        0.5374963719040501,
+        0.0,
+        0.0,
+        0.46250362668272554,
+        0.0
+      ],
+      "anchor_before": -0.7609484735820089,
+      "anchor_after": 0.0,
+      "gradient_at_anchor": [
+        0.006136205296090859,
+        -0.002140881736162327,
+        -0.0001580606566537467
+      ],
+      "hessian_error": 0.0001070329662674433,
+      "raw_metrics": {
+        "rmse": 0.760952769235878,
+        "max_abs": 0.7711802220388595,
+        "relative_l2": 0.22663589775156234,
+        "hj_mean_abs": 0.0027582153363462313,
+        "hj_max": 0.03917238588621075
+      },
+      "normalized_metrics": {
+        "rmse": 0.003356266967644648,
+        "max_abs": 0.010231748456850376,
+        "relative_l2": 0.0009996028768906081,
+        "hj_mean_abs": 0.0027582153363462313,
+        "hj_max": 0.03917238588621075
+      },
+      "independent_test_metrics": {
+        "rmse": 0.0033204951204480098,
+        "max_abs": 0.00903110409371255,
+        "relative_l2": 0.0010980558237459618,
+        "hj_mean_abs": 0.002474016466408642,
+        "hj_max": 0.034018896686191624
+      },
+      "optimizers": [
+        {
+          "success": false,
+          "status": 1,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "fun": 0.02089959211527326,
+          "nfev": 5348,
+          "nit": 5000,
+          "gradient_max": 56.606989682606546,
+          "seconds": 246.4391834170092
+        },
+        {
+          "success": false,
+          "status": 1,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "fun": 0.019143136798496142,
+          "nfev": 5340,
+          "nit": 5000,
+          "gradient_max": 1.3795070501110105,
+          "seconds": 69.30187229200965
+        }
+      ],
+      "gradient_checks": [
+        {
+          "value_abs_difference": 6.938893903907228e-18,
+          "directional_gradient_relative_error": 1.0724980395535738e-08
+        },
+        {
+          "value_abs_difference": 3.237445034276476e-13,
+          "directional_gradient_relative_error": 9.861757213254765e-06
+        }
+      ],
+      "seconds": 332.33484929200495
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Median measured time in milliseconds. Fit includes the three-bandwidth search and validation; test is value and gradient prediction on 4096 points. Problem setup, imports, plots, and error calculation are excluded.}\label{tab:timing}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{Direct} & \multicolumn{2}{c}{Koopman} & Riccati\\
+Example & Fit & Test & Fit & Test & Test\\
+\midrule
+1: MS, $d=2$ & 30.17 & 7.81 & 3.70 & 5.29 & 0.11\\
+2: DW, $d=2$ & 22.13 & 6.12 & 3.46 & 5.05 & 0.12\\
+3: Mult., $d=3$ & 4.87 & 7.70 & 5.09 & 6.56 & 0.16\\
+4: Rot., $d=8$ & 19.79 & 20.05 & 14.34 & 13.96 & 0.41\\
+\bottomrule
+\end{tabular}
+\end{table}
