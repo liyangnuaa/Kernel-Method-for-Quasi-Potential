@@ -1,0 +1,33 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2010}{-}
+\usepackage{lmodern,amsmath,amssymb,booktabs,longtable,tabularx,xurl,fvextra,microtype}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}\setlength{\emergencystretch}{3em}
+\DefineVerbatimEnvironment{Commands}{Verbatim}{fontsize=\small,breaklines=true,breakanywhere=true}
+\title{Revision and source-preservation notes}\author{}\date{23 September 2026}
+\begin{document}\maketitle
+The 28-page baseline \path{main_revised_05032026_norebutal.tex} remains byte-identical. The clean manuscript has 32 pages and retains the authors, affiliations, literature discussion, action and WKB development, kernel methodology, conditional convergence theorem and full proof, Riccati corollary, all three systems, conclusion, acknowledgments, and all 55 original citation keys. Four additional references support the theoretical and methodological discussion.
+
+\section*{Numerical revision}
+The experiments were recomputed from the drift, diffusion, equilibrium curvature, and disclosed seeds. The clean article now gives the tested direct scalar kernel formulations, their fitting objectives, and their measured errors. Polynomial degree-four models recover the two-dimensional benchmark potentials. The three-dimensional anchored degree-two refit achieves RMSE $1.35\times10^{-9}$ at $N=200$, and every sample-count refit passes gradient termination. The separate direct-versus-spectral comparison and structured eight-dimensional test were also rerun.
+
+The original numerical tables, sparsity summaries, empirical rate, and PNG figures are replaced in the clean article by supported results and native vector PDFs. The unchanged baseline and the full red/blue comparison preserve the removed content. Thus preservation of the source record does not imply preservation of superseded numerical assertions in the scientific article.
+
+\section*{Changes addressing the review}
+\begin{enumerate}
+\item The introduction distinguishes kernel collocation, physics-informed quasi-potential fitting, and Koopman approximations. Direct and spectral parametrizations are defined separately.
+\item The convergence theorem states explicit compactness, boundary-comparison, and residual-control assumptions. The full eight-step proof is retained and corrected; local curvature alone does not select the viscosity solution.
+\item The appendix supplies an eight-dimensional structured experiment with three seeds, while the dimensional claims remain tied to the tested systems.
+\item Complexity separates assembly, factorization, storage, dimensional dependence, and outer selection. Measured timings and exact Gram storage are included.
+\item The transformed-diffusion identity and an analytic counterexample explain the spectral restriction. Controlled experiments compare direct and spectral models on common data.
+\end{enumerate}
+
+\section*{Source accounting}
+The marked manuscript uses blue additions and red removals. Removed numerical tables and figures remain visible there. The source-change report embeds the exact unified diff against the requested baseline. Inactive historical source blocks are excluded from the typeset comparison but remain in the exact source diff. The original PNG files and eight recovered scripts are unchanged and accompanied by hashes.
+
+The clean article contains no reviewer discussion, references to earlier versions, or audit warnings. The separate numerical reproduction report documents unchanged-source replays, optimizer diagnostics, corrections, and the distinction between exact replay and new computations. All TeX files and their inputs are supplied.
+
+\end{document}

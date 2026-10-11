@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-23",
+  "baseline_sha256": "90711d331a76860f5f7fadcea6ec4e7d36bb161264f974a2ab8b9facb7059296",
+  "revised_sha256": "b69dd56ebdbecccef7166c47376854fb815b0a83e4c790071b3b532201b2b043",
+  "baseline_pages": 28,
+  "revised_pages": 32,
+  "baseline_copy_identical": true,
+  "original_citations": 55,
+  "retained_citations": 55,
+  "original_table_bodies_identical": false,
+  "original_tables_preserved_in_baseline_and_redline": true,
+  "all_three_systems_retained": true,
+  "original_figure_assets_identical": true,
+  "clean_article_no_audit_flags": true,
+  "numerical_results_recomputed": true
+}

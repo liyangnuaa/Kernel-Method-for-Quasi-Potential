@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-23",
+  "clean_figures": {
+    "Figure_1.pdf": {
+      "generator": "code/plot_verified_experiments.py",
+      "source": "results/accuracy/polynomial_experiments.json",
+      "native_vector": true,
+      "original_png_retained": true
+    },
+    "Figure_2.pdf": {
+      "generator": "code/plot_verified_experiments.py",
+      "source": "results/accuracy/polynomial_experiments.json",
+      "native_vector": true,
+      "original_png_retained": true
+    },
+    "Figure_3.pdf": {
+      "generator": "code/plot_verified_experiments.py",
+      "source": "results/accuracy/polynomial_experiments.json",
+      "native_vector": true,
+      "original_png_retained": true
+    },
+    "Figure_4_residuals.pdf": {
+      "generator": "code/plot_verified_experiments.py",
+      "source": "results/accuracy/polynomial_experiments.json",
+      "native_vector": true,
+      "original_png_retained": true
+    },
+    "convergence_study_example3.pdf": {
+      "generator": "code/plot_verified_experiments.py",
+      "source": "results/accuracy/example3_stable.json",
+      "native_vector": true,
+      "original_png_retained": true
+    },
+    "quasi_potential_slices_sparse.pdf": {
+      "generator": "code/plot_verified_experiments.py",
+      "source": "results/accuracy/example3_stable.json",
+      "native_vector": true,
+      "original_png_retained": true
+    },
+    "residuals_example3.pdf": {
+      "generator": "code/plot_verified_experiments.py",
+      "source": "results/accuracy/example3_stable.json",
+      "native_vector": true,
+      "original_png_retained": true
+    },
+    "ablation.pdf": {
+      "generator": "code/generate_figures.py",
+      "source": "results/experiments.json and results/fitted_models.npz",
+      "native_vector": true
+    },
+    "comparison_2d.pdf": {
+      "generator": "code/generate_figures.py",
+      "source": "results/experiments.json and results/fitted_models.npz",
+      "native_vector": true
+    }
+  },
+  "original_figures": "unchanged baseline PNGs; used only in baseline and marked comparison",
+  "historical_diagnostic_figures": "code/plot_recovered_runs.py writes to figures/audit"
+}

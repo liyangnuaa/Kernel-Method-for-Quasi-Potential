@@ -1,0 +1,19 @@
+% Build adapter for the unchanged historical source.
+% It supplies the Unicode hyphen mapping, uses the deduplicated bibliography,
+% and fits the one oversized portrait figure on its page. No prose is changed.
+\RequirePackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2010}{-}
+\RequirePackage{xurl}
+\AtBeginDocument{%
+  \setlength{\emergencystretch}{3em}%
+  \let\BaselineBibliography\bibliography
+  \renewcommand{\bibliography}[1]{\BaselineBibliography{references_full_revision}}%
+  \let\BaselineIncludeGraphics\includegraphics
+  \renewcommand{\includegraphics}[2][]{%
+    \ifnum\pdfstrcmp{#2}{quasi_potential_slices_sparse.png}=0
+      \BaselineIncludeGraphics[width=0.94\textwidth]{#2}%
+    \else
+      \BaselineIncludeGraphics[#1]{#2}%
+    \fi}%
+}
+\input{main_revised_05032026_norebutal.tex}

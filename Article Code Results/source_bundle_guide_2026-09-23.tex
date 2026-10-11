@@ -1,0 +1,56 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2010}{-}
+\usepackage{lmodern,amsmath,amssymb,booktabs,longtable,tabularx,xurl,fvextra,microtype}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}\setlength{\emergencystretch}{3em}
+\DefineVerbatimEnvironment{Commands}{Verbatim}{fontsize=\small,breaklines=true,breakanywhere=true}
+\title{Complete TeX and numerical source package}\author{}\date{23 September 2026}
+\begin{document}\maketitle
+This package contains the complete 32-page clean article, full blue/red comparison, rebuttal, exact source diff, numerical reproduction report, baseline, and all compilation inputs.
+\section*{Compile all documents}
+A full TeX Live or MiKTeX installation with pdfLaTeX, BibTeX, and latexmk is required. Compilation uses only package-local inputs and does not require scientific Python packages or network access.
+\begin{Commands}
+python3 build.py --force
+\end{Commands}
+The eight document targets are \texttt{clean}, \texttt{marked}, \texttt{rebuttal}, \texttt{changes}, \texttt{notes}, \texttt{guide}, \texttt{baseline}, and \texttt{reproduction}. Output PDFs and logs are written to \path{build/}. For example:
+\begin{Commands}
+python3 build.py --document clean --force
+\end{Commands}
+For Overleaf, upload the ZIP and choose \path{main_revised_23092026_norebutal.tex} or \path{main_revised_23092026_tracked.tex} as the main document, using pdfLaTeX. The unchanged baseline is compiled through \path{original_baseline_compile.tex}, which supplies compilation adapters without editing its original source.
+
+\section*{Recompute the main experiments}
+\begin{Commands}
+python -m pip install -r requirements-reproduction.txt
+python code/run_polynomial_experiments.py
+python code/refit_selected_kernel.py
+python code/plot_verified_experiments.py
+\end{Commands}
+These commands reproduce the two-dimensional polynomial fits, the three-dimensional anchored kernel fits, seven native figures, and two TeX tables. Training and testing arrays, fitted coefficients, all candidate scores, seeds, solver statuses, and derivative checks are in \path{results/accuracy/}. No analytic reference values enter fitting or model selection.
+
+\section*{Recompute the additional comparisons}
+\begin{Commands}
+python code/run_experiments.py
+python code/make_tables.py
+python code/generate_figures.py
+\end{Commands}
+The appendix contains 36 method/seed records, including the structured eight-dimensional example. The code also measures timings and dense Gram costs. Timings vary with the machine.
+
+\section*{Replot from saved arrays and verify vector output}
+\begin{Commands}
+python code/generate_figures.py
+python code/plot_verified_experiments.py
+python code/check_vector_pdfs.py
+python build.py --force
+\end{Commands}
+The figures consist of vector paths and embedded fonts. No PNG is wrapped, traced, or embedded into the clean article. The saved data allow replotting without refitting.
+
+\section*{All TeX sources}
+The root contains the eight document masters, the unchanged baseline source, and the tracked bibliography fragment. The \path{results/} directory contains five table fragments: the three appendix tables and the two verified main-text tables. All bibliography files and the clean bibliography fallback are included. The machine-readable inventory \path{verification/tex_source_inventory.json} lists every TeX file.
+
+\section*{Comparison archive and audit}
+The original 28-page source, original PNGs, and recovered scripts are preserved. The blue/red manuscript and \path{changes_from_requested_baseline.diff} expose all changes. The separate reproduction report records the original-source replays and explains the stabilized implementations. Historical replay scripts write to \path{results/reproduction/}; their diagnostic plotter writes to \path{figures/audit/} so it cannot overwrite the clean article's figures. \path{MANIFEST.sha256} identifies the delivered inputs.
+
+\end{document}

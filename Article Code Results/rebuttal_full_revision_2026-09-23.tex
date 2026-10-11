@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,microtype}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\newcommand{\comment}[1]{\begin{quote}\small\itshape #1\end{quote}}
+\begin{document}
+\begin{center}
+{\Large\bfseries Response to Reviewer 1}\\[7pt]
+Manuscript CHAOS-D-26-04179\\[5pt]
+\textit{Kernel Methods for the Computation of Quasi-Potentials\\in Stochastic Dynamical Systems}\\[5pt]
+\textbf{23 September 2026}
+\end{center}
+
+Dear Professor Guan,
+
+Thank you for the opportunity to revise the manuscript. We have retained the full mathematical development and all three benchmark systems, clarified the two kernel parametrizations, corrected the convergence argument, and recomputed the numerical experiments. The complete clean article is 32 pages. All 55 original citation keys are retained.
+
+The experiments now specify the actual implemented objectives, constraints, seeds, data splits, model selection, and stopping criteria. The two-dimensional polynomial fits recover the quartic reference potentials, and the anchored three-dimensional kernel refit attains RMSE $1.35\times10^{-9}$ at $N=200$. All figures are generated as native PDFs from supplied fitted arrays. The full blue/red comparison preserves removed material; the clean article is a standalone scientific presentation. Page references below refer to the manuscript dated 23 September 2026.
+
+\section*{1. Relationship to existing methods}
+\comment{The manuscript combines several existing techniques, including Koopman eigenfunctions, RKHS approximation, Hamilton-Jacobi residual minimization, and sparse kernel learning. While the overall framework appears interesting, the authors should more clearly distinguish the proposed method from existing kernel collocation methods, physics-informed learning approaches, and Koopman-based approximation frameworks.}
+
+\textbf{Response.} We agree and have added a focused comparison in the Introduction, retaining the existing literature review. Nonlinear kernel/GP collocation already provides smooth features, derivative evaluation, and PDE residual fitting; physics-informed quasi-potential methods already impose HJ structure; kernel Koopman methods already approximate dynamical observables. The contribution here is their particular coupling with the diffusion-dependent Riccati Hessian and kernel selection for quasi-potential reconstruction, not the invention of those individual ingredients. Four relevant references have been added without removing the 55 original citation keys.
+
+The revision also clarifies the distinction between kernel amplitudes and mixture weights. In the squared-amplitude convention,
+\[
+ k_\beta=\sum_j\beta_j^2k_j,\qquad \beta_j\geq0,\quad \sum_j\beta_j^2=1,
+\]
+the $\ell_1$ penalty applies to amplitudes $\beta$, not to the mixture weights $w_j=\beta_j^2$. Its range is $1\leq\sum_j\beta_j\leq\sqrt L$, so it encourages concentrated mixtures. By contrast, $\|w\|_1=1$ on the simplex and cannot promote sparsity. We make the squared-amplitude convention consistent throughout the mixture formulation. We separately specify the finite polynomial-degree selection used in the numerical examples, rather than attributing it to an amplitude-penalty path. A new direct-implementation subsection gives exact local constraints, analytic residual Jacobians, and a rank-nine anchored quadratic refit. These distinctions align the scientific description with the executable computations.
+
+\textbf{Locations:} main-text discussion (p.~2); main-text discussion (p.~7); Equation~18 (p.~7).
+
+\section*{2. Connection to viscosity convergence}
+\comment{Theorem 3.2 provides a convergence result for the proposed surrogate. However, the connection between minimizing the Hamilton-Jacobi residual and convergence to the corresponding viscosity solution is not sufficiently justified. Additional discussion or references would strengthen the theoretical analysis.}
+
+\textbf{Response.} We agree that the earlier assumptions did not justify the full conclusion. We have revised Theorem~3.2 and its eight-step proof in place, rather than treating residual fitting as sufficient by itself. The revised result assumes a compatible boundary-value problem with a comparison principle, uniformly bounded/equicontinuous approximations, convergence of boundary values, and control of residuals both at and between collocation points. Compactness and the viscosity test-function argument then identify the limit as the selected solution. Crandall, Ishii, and Lions (1992) is cited for viscosity stability.
+
+The sampling-to-residual condition is now explicit:
+\[
+ \|r_N\|_\infty\leq\max_{x_p\in X_N}|r_N(x_p)|+\omega(h_N),
+\]
+where $h_N$ is fill distance and $\omega$ a common residual modulus. A small empirical mean-square loss alone does not imply this estimate vanishes. Nor does strict convexity of the Hamiltonian identify the quasi-potential from one anchor: for $b=-x$, $a=1$, both $u=0$ and $u=x^2$ solve HJ with $u(0)=0$. The revised empirical-optimality step retains comparator regularization and optimization errors instead of dropping them.
+
+The proof treats Hessian and gradient convergence separately. Soft curvature matching requires the attained objective divided by its curvature weight to vanish; gradient convergence requires additional compactness and smoothness. The corollary now includes the positive-Hessian assumption and the consistent Riccati equation $F^\top P+PF+PAP=0$. The original proof's unconditional gradient-error estimate and rate claim are not retained as valid assertions.
+
+We also distinguish this argument from Barles--Souganidis (1991): monotonicity of the nonlinear kernel least-squares scheme has not been established, so their monotone-scheme theorem is not an automatic guarantee for our optimizer. The local numerical examples do not verify the full boundary/comparison hypotheses. Their residual diagnostics and the sample-count study are accordingly described as numerical observations, not proofs of the theorem or an optimal asymptotic rate.
+
+\textbf{Locations:} main-text discussion (p.~8); Theorem~3.2 (p.~9); Equation~22 (p.~10); Corollary~3.4 (p.~11); main-text discussion (p.~20).
+
+\section*{3. Higher-dimensional evidence and scalability}
+\comment{The manuscript emphasizes applicability to higher-dimensional systems, yet all numerical examples are limited to dimensions no greater than three. Additional higher-dimensional experiments or more cautious claims regarding scalability would be beneficial.}
+
+\textbf{Response.} The three original examples remain unchanged in dimensional scope and are retained in the main text. We now state that their evidence is limited to dimensions two and three and remove the unsupported universal dimension cutoff. The complexity discussion explains the sample-coverage burden, including $N=q^n$ for tensor grids.
+
+Appendix~A adds an eight-dimensional nonlinear rotational system with known nonquadratic action value:
+\[
+ V_*(x)=\sum_{i=1}^8(x_i^2+0.1x_i^4),\qquad
+ b=-\tfrac12\nabla V_*+R\nabla V_*,\qquad a=I,
+\]
+where $R$ is a specified skew-symmetric nearest-neighbor matrix. The protocol uses $256$ training points, $32$ centers, $512$ validation points, $4096$ independent test points, and three disclosed seeds. Mean relative potential errors are approximately $5.95\%$ for the Riccati baseline, $1.38\%$ for the direct correction, and $16.31\%$ for the restricted quadratic Koopman candidate.
+
+We identify this as a structured stress test: the potential is separable, and fixed sample count does not imply equal spatial coverage across dimensions. It does not establish broad high-dimensional scalability or superiority of the spectral model. Its code, fitted coefficients, and raw results are supplied with the paper.
+
+\textbf{Locations:} main-text discussion (p.~12); Appendix~A.2 (p.~24); Equation~36 (p.~25); Table~3 (p.~25); abstract and conclusion.
+
+\section*{4. Computational complexity, runtime, and memory}
+\comment{The computational complexity analysis is rather brief. A clearer discussion of runtime, memory requirements, and scalability with respect to the number of collocation points and state dimension would improve the paper.}
+
+\textbf{Response.} We have added a detailed cost discussion defining collocation count $N$, center count $M$, dimension $n$, dictionary size $L$, and outer evaluations $T$. It separates $O(N^2n)$ dense assembly from $O(N^3)$ factorization and $O(N^2)$ storage. A float64 Gram matrix alone requires $8N^2$ bytes; this does not include derivative tensors, factors, optimizer workspaces, or validation arrays.
+
+We distinguish independent scalar transport solves from a fully coupled real system, and identify the additional factors in dimension and memory for the latter. The analysis includes direct scalar nonlinear least-squares steps, dense-diffusion matrix action, trained-model evaluation, the outer kernel search, and the fact that reducing dictionary size does not itself reduce center count. Structured versus dense Taylor-Hessian evaluation is also distinguished in the additional implementation.
+
+Appendix~A reports measured fitting/selection and test-evaluation times for the documented additional models. A separate microbenchmark covers dense Gram assembly and Cholesky factorization at $N=128,256,512,1024$ and $n=2,8$, with exact Gram storage. These are not retrospectively assigned runtimes for the original experiments. We specify the environment and timing exclusions, state that peak resident memory was not measured, and do not fit an asymptotic exponent to four small matrix sizes.
+
+\textbf{Locations:} main-text discussion (p.~12); Appendix~A.3 (p.~27); Table~4 (p.~26); Table~5 (p.~26).
+
+\section*{5. Value of the Koopman representation}
+\comment{The contribution of the Koopman representation should be better justified. In particular, it would be helpful to clarify its advantages over directly approximating the quasi-potential using RKHS-based approaches.}
+
+\textbf{Response.} The new discussion distinguishes structural advantages from numerical superiority. A positive quadratic form in Koopman coordinates is nonnegative and uses linear inner transport fits; its coordinates can also be reused for dynamical analysis. A direct scalar kernel model avoids the eigenfunction stage and also has analytic derivatives. The spectral representation is therefore an optional restriction whose usefulness must be assessed for the problem at hand.
+
+The revised normalization uses left eigenvectors, treats complex conjugate modes through real blocks, and chooses the quadratic matrix to reproduce the physical Riccati Hessian. The manuscript now shows that even exact transport equations do not force the HJ residual to vanish, because the transformed diffusion $D\Phi\,a\,D\Phi^\top$ generally varies in space. An analytic one-dimensional example illustrates the restriction: $b=-x(1+x^2)$ and $a=1+x^2$ have true quasi-potential $x^2$, but squaring the normalized eigenfunction $x/\sqrt{1+x^2}$ yields $x^2/(1+x^2)$.
+
+Appendix~A compares direct and restricted spectral models using common samples, centers, bandwidth candidates, and exact curvature constraints. Parameter counts, fitting objectives, and regularizers are disclosed. Direct fitting is more accurate in these tests. The main experiments therefore identify their direct scalar polynomial-kernel parametrizations explicitly; their accuracy is not attributed to a Koopman-specific advantage. The three-dimensional refit uses exactly the anchored degree-two kernel function class in nine identifiable feature coordinates, with the minimum-norm original kernel coefficients reconstructed afterward.
+
+\textbf{Locations:} Equation~15 (p.~6); main-text discussion (p.~8); Equation~19 (p.~8); Appendix~A.1 (p.~24); Appendix~A.2 (p.~24).
+
+\section*{Recomputed numerical evidence and source package}
+All three benchmark systems were retained and their numerical sections were updated to the measured computations. For the Maier--Stein system, three seeds select polynomial degree four by independent HJ validation, giving RMSE $1.13\times10^{-10}$ to $1.62\times10^{-10}$ on the specified broad grid. For the double-well system, the independent-basin RMSE is $4.74\times10^{-8}$ to $5.22\times10^{-8}$; a wider-grid extrapolation test and discrete level-set metric are stated separately. The multiplicative-noise test gives $1.35\times10^{-9}$ at $N=200$, with all five sample counts satisfying gradient termination. Its Riccati warm start is exact, so we identify this as a consistency test rather than a learned improvement over Riccati.
+
+The polynomial spaces contain the analytic targets, a favorable representability condition now made explicit. Training uses drift, diffusion, and local Riccati curvature; reference potentials are evaluated only after fitting and selection. The fixed continuation schedule, all candidate validation scores, independent tests, derivative checks, and full coefficients are supplied. Unsupported numerical summaries and the empirical rate assertion are replaced by these computations, with their removal visible in the marked comparison. The original source and figures remain byte-identical in the comparison archive. A separate computational report records the unchanged-source replays and implementation corrections.
+
+We thank the reviewer for helping us state the contribution, evidence, and limitations more precisely.
+
+Sincerely,\\The authors
+\end{document}
