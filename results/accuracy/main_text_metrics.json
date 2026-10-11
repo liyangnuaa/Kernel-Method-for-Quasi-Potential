@@ -1,0 +1,76 @@
+{
+  "two_dimensional": [
+    {
+      "problem": "maier_stein",
+      "seed": 42,
+      "riccati_basin_rmse": 50.08581983367763,
+      "riccati_basin_relative_l2": 0.8143916898160412
+    },
+    {
+      "problem": "maier_stein",
+      "seed": 43,
+      "riccati_basin_rmse": 50.08581983367763,
+      "riccati_basin_relative_l2": 0.8143916898160412
+    },
+    {
+      "problem": "maier_stein",
+      "seed": 44,
+      "riccati_basin_rmse": 50.08581983367763,
+      "riccati_basin_relative_l2": 0.8143916898160412
+    },
+    {
+      "problem": "double_well",
+      "seed": 42,
+      "riccati_basin_rmse": 0.4130309973466449,
+      "riccati_basin_relative_l2": 0.34226605220914275,
+      "levelset_grid": 101,
+      "levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4
+      ],
+      "band": 0.02,
+      "fit_hausdorff": 0.0,
+      "riccati_hausdorff": 0.1317224441004577
+    },
+    {
+      "problem": "double_well",
+      "seed": 43,
+      "riccati_basin_rmse": 0.4130309973466449,
+      "riccati_basin_relative_l2": 0.34226605220914275,
+      "levelset_grid": 101,
+      "levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4
+      ],
+      "band": 0.02,
+      "fit_hausdorff": 0.0,
+      "riccati_hausdorff": 0.1317224441004577
+    },
+    {
+      "problem": "double_well",
+      "seed": 44,
+      "riccati_basin_rmse": 0.4130309973466449,
+      "riccati_basin_relative_l2": 0.34226605220914275,
+      "levelset_grid": 101,
+      "levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4
+      ],
+      "band": 0.02,
+      "fit_hausdorff": 0.0,
+      "riccati_hausdorff": 0.1317224441004577
+    }
+  ],
+  "riccati_example3": [
+    3.6709451369387505e-16,
+    1.7763568394002505e-15,
+    1.0933240279055408e-16
+  ],
+  "description": "Metrics calculated only after model selection; no reference-based amplitude rescaling"
+}
